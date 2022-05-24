@@ -8,7 +8,6 @@ function App() {
   const [weather, setWeather] = useState();
   const [location, setLocation] = useState("delhi");
   const user = useState(localStorage.getItem("user"));
-  console.log(user)
   const api_key = process.env.REACT_APP_WEATHER_API;
   const api_url = "https://stoicquotesapi.com/v1/api/quotes/random";
   const weatherURL = `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${location}`;
@@ -22,7 +21,6 @@ function App() {
   const getWeather = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data)
     setWeather(data);
   };
 
